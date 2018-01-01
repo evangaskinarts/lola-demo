@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="21px" viewBox="0 0 23 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="heartFill" transform="translate(-1.000000, -2.000000)" fill="#F75E12" fill-rule="nonzero" stroke="#FFFFFF" stroke-width="2">
+            <path d="M12.6,21.6 L11.121,20.3051771 C5.868,15.7242507 2.4,12.7029973 2.4,8.99509537 C2.4,5.97384196 4.8684,3.6 8.01,3.6 C9.7848,3.6 11.4882,4.39455041 12.6,5.65013624 C13.7118,4.39455041 15.4152,3.6 17.19,3.6 C20.3316,3.6 22.8,5.97384196 22.8,8.99509537 C22.8,12.7029973 19.332,15.7242507 14.079,20.3149864 L12.6,21.6 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
