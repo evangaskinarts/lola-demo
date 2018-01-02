@@ -12,15 +12,22 @@ export class ArtistPage extends Component {
         curArtistKey: this.props.curArtistKey,
         ifTouring: null
     }
+    this.setArtist = this.setArtist.bind(this);
   }
+
+
+
 
   checkTour () {
       if (Artists[this.state.curArtistKey].onTour == true) {
           this.setState({
             ifTouring: true,
           })
-      }
-        
+      }  
+  }
+
+  setArtist = (val) => {
+      this.state.curArtistKey = val;
   }
 
   render() {
@@ -30,16 +37,26 @@ export class ArtistPage extends Component {
 
     return (
     <div>
-      <Header headerType="artist-page" icon1="menuWhite" icon2="personWhite" curArtistKey={this.props.curArtistKey}/>
+      <Header headerType="artist-page" icon1="menuWhite" icon2="personWhite" curArtistKey={this.props.curArtistKey} setArtist={this.setArtist}/>
       
       <div className="artist-img-box">
         <div className="artist-header-fader"></div>
         <div className="artist-img" style={{backgroundImage: `url(${Artists[curArtistKey].imgURL})`}}></div>
       </div>
 
+  
+
+      <div className="content-masker">
+    
       <div className="artist-page-content">
       <div className="artist-header-info">
-        <h1 className="artist-name">{Artists[curArtistKey].name}</h1>
+      { Artists[curArtistKey].favorited ? (
+                            <div className="favorite-icon" style={{backgroundImage: `url(${IconURLs.heartFillOutlineRed})`}}></div>
+                        ) : (
+                            <div className="favorite-icon" style={{backgroundImage: `url(${IconURLs.heartOutlineWhite})`}}></div>
+                        )
+                        }
+        <h1 className="artist-name" onClick={this.setArtist(1)}>{Artists[curArtistKey].name}</h1>
         <div>
         {
         
@@ -114,6 +131,8 @@ export class ArtistPage extends Component {
 
 
     </div>
+    </div>
+
     </div>
     );
   }

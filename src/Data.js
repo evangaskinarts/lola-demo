@@ -11,6 +11,8 @@ export var IconURLs = {
     calendarBlack: "icons/calendar-black.svg",
     heartOutlineWhite: "icons/heart-outline-white.svg",
     heartOutlineBlack: "icons/heart-outline-black.svg",
+    heartFillRed: "icons/heart-fill-red.svg",
+    heartFillOutlineRed: "icons/heart-fill-outline-red.svg",
     filterWhite: "icons/filter-white.svg"
 }
 
@@ -149,51 +151,59 @@ export var Artists = [
         name: "SZA",
         onTour: true,
         shows: Shows.length,
-        imgURL: "images/sza.jpeg"
+        imgURL: "images/sza.jpeg",
+        favorited: true
     },
     {
         name: "Grimes",
         onTour: true,
         shows: 10,
-        imgURL: "images/grimes.jpg"
+        imgURL: "images/grimes.jpg",
+        favorited: false
     },
     {
         name: "TOKiMONSTA",
         onTour: true,
         shows: 5,
-        imgURL: "images/toki.jpeg"
+        imgURL: "images/toki.jpeg",
+        favorited: false
     },
     {
         name: "My Bloody Valentine",
         onTour: false,
         shows: 0,
-        imgURL: "images/mbv.jpeg"
+        imgURL: "images/mbv.jpeg",
+        favorited: true
     },
     {
         name: "SZA",
         onTour: true,
         shows: Shows.length,
-        imgURL: "images/sza.jpeg"
+        imgURL: "images/sza.jpeg",
+        favorited: false
     },
     {
         name: "Grimes",
         onTour: true,
         shows: 10,
-        imgURL: "images/grimes.jpg"
+        imgURL: "images/grimes.jpg",
+        favorited: true
     },
     {
         name: "TOKiMONSTA",
         onTour: true,
         shows: 5,
-        imgURL: "images/toki.jpeg"
+        imgURL: "images/toki.jpeg",
+        favorited: true
     },
     {
         name: "My Bloody Valentine",
         onTour: false,
         shows: 0,
-        imgURL: "images/mbv.jpeg"
+        imgURL: "images/mbv.jpeg",
+        favorited: false
     }
 
 ]
 
-export var CurArtistKey = 0;
+export let CurArtistKey = 0;

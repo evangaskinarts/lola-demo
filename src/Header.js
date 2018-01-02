@@ -16,8 +16,8 @@ export class Header extends Component {
     }
   }
 
-  dropDown = () => {
-      this.state.searchBoxClasses !== "nav-search-box drop-down" ? (
+  dropDown = (e) => {
+      (this.state.searchBoxClasses !== "nav-search-box drop-down") && (this.state.inputBlockClasses !== "input-block input-focused") ? (
       this.setState({
           searchBoxClasses: "nav-search-box drop-down",
           inputBlockClasses: "input-block input-focused"
@@ -40,7 +40,7 @@ export class Header extends Component {
         <div className="header-icon hdr-icon-1" style={{backgroundImage: `url(${IconURLs[this.state.icon1]})`}}></div>
             <div className={this.state.inputBlockClasses}>
                 <div className="search-icon" style={{backgroundImage: `url(${IconURLs.searchWhite})`}}></div>
-                <input placeholder="search" type="text" className="input-header" onClick={this.dropDown}/>
+                <input placeholder="search" type="text" className="input-header" onFocus={this.dropDown}/>
                 <div className="search-x" style={{backgroundImage: `url(${IconURLs.xWhite})`}} onClick={this.dropDown}></div>
             </div>
         <div className="header-icon hdr-icon-2" style={{backgroundImage: `url(${IconURLs[this.state.icon2]})`}}></div>
@@ -54,9 +54,9 @@ export class Header extends Component {
             </div>
         <div className="search-results-list">
         {
-            Artists.map((artist) => {
+            Artists.map((artist, index) => {
                 return (
-                    <div className="search-node" key={Artists.indexOf[artist]}>
+                    <div className="search-node" data={index} onClick="">
                         <div className="search-node-img" style={{backgroundImage: `url(${artist.imgURL})`}}></div>
 
                         <div className="search-node-info-box">
@@ -80,7 +80,12 @@ export class Header extends Component {
 
                         
                         </div>
-                        <div className="favorite-icon" style={{backgroundImage: `url(${IconURLs.heartOutlineWhite})`}}></div>
+                        { artist.favorited ? (
+                            <div className="favorite-icon" style={{backgroundImage: `url(${IconURLs.heartFillRed})`}}></div>
+                        ) : (
+                            <div className="favorite-icon" style={{backgroundImage: `url(${IconURLs.heartOutlineWhite})`}}></div>
+                        )
+                        }
                     </div>
                 )
             })
